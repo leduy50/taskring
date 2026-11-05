@@ -18,7 +18,7 @@ Sửa chữ thì sửa cả hai bản.
 
 ## Việc còn lại
 
-- **Nút Microsoft Store**: trong `index.html`, tìm `id="store-link"`, thay `href="#"` bằng đường dẫn Store khi có.
+- **Nút Microsoft Store**: `index.html`, `id="store-link"` → https://apps.microsoft.com/detail/9PC5ZHMF9STJ (Store ID 9PC5ZHMF9STJ).
 
 ## Ảnh chụp màn hình
 
