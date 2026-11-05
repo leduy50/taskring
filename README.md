@@ -19,9 +19,12 @@ Sửa chữ thì sửa cả hai bản.
 ## Việc còn lại
 
 - **Nút Microsoft Store**: trong `index.html`, tìm `id="store-link"`, thay `href="#"` bằng đường dẫn Store khi có.
-- **Ảnh chụp màn hình**: chép ảnh vào `assets/screenshots/` với tên
-  `wheel.png`, `drag-files.png`, `shelf.png`, `settings.png`, rồi trong `index.html` thay khung
-  `<div class="shot-frame">…</div>` bằng `<div class="shot-frame"><img src="assets/screenshots/wheel.png" alt="…"></div>`.
+
+## Ảnh chụp màn hình
+
+`assets/screenshots/vi/` và `assets/screenshots/en/` (JPG 1200×900, cắt và thu nhỏ từ ảnh Store
+`RadialDrop\dist\store-screenshots`). Trang tự hiện bộ ảnh theo ngôn ngữ đang chọn.
+Thay ảnh: giữ đúng tên tệp, chép đè.
 
 ## Đăng lên GitHub Pages
 
