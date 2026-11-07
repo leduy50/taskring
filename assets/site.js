@@ -39,5 +39,31 @@
     }
     var y = document.querySelectorAll('[data-year]');
     for (var j = 0; j < y.length; j++) y[j].textContent = new Date().getFullYear();
+    clips();
   });
+
+  // Demo clips: load and play only while on screen (page stays light); paused off screen.
+  // "Reduce motion" turned on: no autoplay, the poster stays and the video gets controls instead.
+  function clips() {
+    var vids = document.querySelectorAll('video[data-autoplay]');
+    if (!vids.length) return;
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still || !('IntersectionObserver' in window)) {
+      for (var i = 0; i < vids.length; i++) vids[i].controls = true;
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      for (var k = 0; k < entries.length; k++) {
+        var v = entries[k].target;
+        if (entries[k].isIntersecting) {
+          if (v.preload !== 'auto') { v.preload = 'auto'; v.load(); }
+          var p = v.play();
+          if (p && p.catch) p.catch(function () { /* autoplay blocked: poster stays */ });
+        } else {
+          v.pause();
+        }
+      }
+    }, { rootMargin: '200px 0px', threshold: 0.25 });
+    for (var j = 0; j < vids.length; j++) io.observe(vids[j]);
+  }
 })();

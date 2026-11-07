@@ -117,6 +117,16 @@ section { padding: 40px 0; }
 .card:nth-child(3n+2) .icon { background: color-mix(in srgb, var(--yellow) 26%, transparent); color: #A86E00; }
 @media (prefers-color-scheme: dark) { .card:nth-child(3n+2) .icon { color: var(--yellow); } }
 
+/* Demo clips */
+.clips { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
+.clip { margin: 0; }
+.clip-frame {
+  aspect-ratio: 16 / 9; border-radius: var(--radius); border: 1px solid var(--border);
+  background: #12305a; overflow: hidden; box-shadow: var(--shadow);
+}
+.clip-frame video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.clip figcaption { font-size: .92rem; color: var(--muted); margin-top: 8px; text-align: center; }
+
 /* Screenshots */
 .shots { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); }
 .shot { margin: 0; }
